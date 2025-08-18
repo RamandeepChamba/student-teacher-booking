@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
 const StyledModal = styled.div`
-  position: relative;
+  /* position: relative; */
   background-color: #ccc;
   & > button {
     position: absolute;
-    top: 0;
-    left: 100%;
-    transform: translateY(-100%);
+    top: 1rem;
+    right: 1rem;
   }
 `;
 

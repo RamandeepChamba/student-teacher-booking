@@ -1,16 +1,53 @@
-import { useState } from "react";
 import Form from "../../ui/Form";
 import Button from "../../ui/Button";
+import useAddTeacher from "./useAddTeacher";
+import toast from "react-hot-toast";
+import useGetDepartmentsAndSubjects from "./useGetDepartmentsAndSubjects";
+import DepartmentsAndSubjectsForForm from "./DepartmentsAndSubjectsForForm";
+import { useState } from "react";
 
 function AddTeacherForm({ onCloseModal }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [department, setDepartment] = useState("");
-  const [subject, setSubject] = useState("");
+
+  // Fetch departments and subjects for select options
+  const {
+    isLoadingDepartments,
+    departments,
+    isLoadingSubjects,
+    subjects,
+    department,
+    setDepartment,
+    subject,
+    setSubject,
+  } = useGetDepartmentsAndSubjects();
+
+  const { isAddingTeacher, addTeacher } = useAddTeacher();
 
   function handleSubmit(e) {
-    e.preventDefault;
+    e.preventDefault();
+    if (!name || !email || !password || !department || !subject) return;
+    // Add teacher
+    const teacher = {
+      name,
+      email,
+      password,
+      department,
+      subject,
+    };
+    addTeacher(
+      { teacher },
+      {
+        onError(err) {
+          toast.error(err.message);
+        },
+        onSuccess() {
+          toast.success("Teacher added successfully");
+          onCloseModal();
+        },
+      }
+    );
   }
   return (
     <div>
@@ -52,32 +89,27 @@ function AddTeacherForm({ onCloseModal }) {
             required
           />
         </Form.Group>
-        <Form.Group>
-          <label htmlFor="department">Department</label>
-          <select
-            name="department"
-            id="department"
-            value={department}
-            onChange={(e) => setDepartment(e.target.value)}
-          >
-            <option value="1">Science</option>
-            <option value="2">Computer Science</option>
-          </select>
-        </Form.Group>
-        <Form.Group>
-          {/* Depends on the department */}
-          <label htmlFor="subject">Subject</label>
-          <select
-            name="subject"
-            id="subject"
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-          >
-            <option value="1">Physics</option>
-            <option value="2">Biology</option>
-          </select>
-        </Form.Group>
-        <Button type="submit">Add a teacher</Button>
+        <DepartmentsAndSubjectsForForm
+          department={department}
+          setDepartment={setDepartment}
+          subject={subject}
+          setSubject={setSubject}
+          isLoadingSubjects={isLoadingSubjects}
+          isLoadingDepartments={isLoadingDepartments}
+          departments={departments}
+          subjects={subjects}
+        />
+        <Button
+          type="submit"
+          disabled={
+            isLoadingDepartments ||
+            isLoadingSubjects ||
+            isAddingTeacher ||
+            !subjects
+          }
+        >
+          Add a teacher
+        </Button>
       </Form>
     </div>
   );

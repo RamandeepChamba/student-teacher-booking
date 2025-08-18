@@ -1,5 +1,5 @@
 import AddTeacher from "../features/teacher/AddTeacher";
-import TeacherList from "../features/teacher/TeacherList";
+import AllTeachersList from "../features/teacher/AllTeachersList";
 
 function Teachers() {
   return (
@@ -7,7 +7,7 @@ function Teachers() {
       {/* Add a teacher */}
       <AddTeacher />
       {/* Teachers List */}
-      <TeacherList />
+      <AllTeachersList />
     </>
   );
 }

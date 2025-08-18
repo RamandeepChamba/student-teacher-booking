@@ -30,7 +30,7 @@ function Window({ children, name }) {
   return createPortal(
     <Overlay>
       <StyledModal>
-        <Button onClick={close} radius="normal">
+        <Button onClick={close} radius="normal" variation="danger">
           &times;
         </Button>
         <div>{cloneElement(children, { onCloseModal: close })}</div>

@@ -12,6 +12,27 @@ const Button = styled.button`
       }
     `}
   ${(props) =>
+    props.variation === "dark" &&
+    css`
+      background-color: var(--color-dark);
+      color: var(--color-light);
+
+      &:hover {
+        background-color: var(--color-gray);
+      }
+    `}
+  ${(props) =>
+    props.variation === "light" &&
+    css`
+      background-color: var(--color-light);
+      color: var(--color-dark);
+
+      &:hover {
+        background-color: var(--color-dark);
+        color: var(--color-light);
+      }
+    `}
+  ${(props) =>
     props.variation === "success" &&
     css`
       background-color: var(--color-success);
@@ -38,15 +59,22 @@ const Button = styled.button`
       border-radius: 5px;
     `}
 
+  display: inline-block;
+  text-decoration: none;
   border: none;
   padding: 1rem;
   cursor: pointer;
   transition: 0.2s all;
   font-size: inherit;
+  text-align: center;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;
 
 Button.defaultProps = {
   variation: "regular",
-  radius: "rounded",
+  radius: "none",
 };
 export default Button;

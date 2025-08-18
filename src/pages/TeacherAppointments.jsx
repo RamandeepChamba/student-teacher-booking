@@ -1,10 +1,12 @@
-import RequestedAppointmentList from "../features/appointment/RequestedAppointmentList";
+import TeacherAppointmentsCalendar from "../features/teacher/TeacherAppointmentsCalendar";
 
 function TeacherAppointments() {
-    return <div>
-        <h1>Your Appointments</h1>
-        <RequestedAppointmentList />
+  return (
+    <div>
+      <h1>Your Appointments</h1>
+      <TeacherAppointmentsCalendar />
     </div>
+  );
 }
 
 export default TeacherAppointments;

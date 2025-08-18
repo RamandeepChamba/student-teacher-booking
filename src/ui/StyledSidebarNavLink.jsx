@@ -7,7 +7,7 @@ const StyledSidebarNavLink = styled(NavLink)`
   padding: 2rem 1rem;
   color: var(--color-dark);
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: var(--font-h3);
   text-decoration: none;
   transition: 0.2s all;
 

@@ -1,10 +1,15 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { useAuth } from "../contexts/AuthContext";
 import StyledSidebarNavLink from "./StyledSidebarNavLink";
+import { respond } from "../styles/mixins";
 
 const StyledNav = styled.nav`
   background-color: var(--color-light-3);
   grid-row: 1 / -1;
+
+  ${respond.tabPort(css`
+    padding-top: 2rem;
+  `)}
 `;
 
 function Sidebar() {
@@ -21,14 +26,21 @@ function Sidebar() {
         </>
       )}
       {role === "teacher" && (
-        <StyledSidebarNavLink to="/teacher/appointments">
-          Appointments
-        </StyledSidebarNavLink>
+        <>
+          <StyledSidebarNavLink to="/teacher/appointments">
+            Appointments
+          </StyledSidebarNavLink>
+        </>
       )}
       {role === "student" && (
-        <StyledSidebarNavLink to="/student/bookAppointment">
-          Appointments
-        </StyledSidebarNavLink>
+        <>
+          <StyledSidebarNavLink to="/student/appointments">
+            Appointments
+          </StyledSidebarNavLink>
+          <StyledSidebarNavLink to="/student/bookAppointment">
+            Book an appointment
+          </StyledSidebarNavLink>
+        </>
       )}
     </StyledNav>
   );

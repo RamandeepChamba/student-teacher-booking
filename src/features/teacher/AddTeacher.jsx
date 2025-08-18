@@ -1,6 +1,6 @@
 import Button from "../../ui/Button";
 import Modal from "../../ui/Modal";
-import AddTeacherForm from "./AddTeacherForm";
+import AddUpdateTeacherForm from "./AddUpdateTeacherForm";
 
 function AddTeacher() {
   return (
@@ -9,7 +9,7 @@ function AddTeacher() {
         <Button variation="success">Add a teacher</Button>
       </Modal.Open>
       <Modal.Window name="add-a-teacher-form">
-        <AddTeacherForm />
+        <AddUpdateTeacherForm />
       </Modal.Window>
     </Modal>
   );

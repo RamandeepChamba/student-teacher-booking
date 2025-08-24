@@ -1,6 +1,6 @@
 # TODOS
 
-- Teacher should Schedule an appointment
+- Teacher should Schedule an appointment ✅
 
   - Make TeacherAppointmentCalendar selectable ✅
   - onSelect view Schedule Appointment form
@@ -21,13 +21,6 @@
   - appointment will be passed
   - approve / reject
     - will change appointment status (mutation -> on success -> hide detailed & refresh)
-- Find out a way to vertically center the login / register form.
-  - what is the problem?
-    - it is centered when on desk view but lower than tab land because of body changing from flex to block (so i can make form full width),
-      it loses align-items.
-  - possible solution
-    - if body doesn't have display flex?
-    - container element instead of body should have display flex?
 - USE CALENDAR FOR BOOKING AND DISPLAYING APPOINTMENTS 🔼
 - Form and it's elements: Input, Label, Form row / group ✅
 - Modal window ✅
@@ -60,6 +53,8 @@
   - status?
 
 # GUIDE
+
+**Check /lld_docs/ for better documentation, our /src/ and /lld_docs/ have same file structure**
 
 ## Login and Register
 

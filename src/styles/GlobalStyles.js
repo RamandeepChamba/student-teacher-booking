@@ -49,7 +49,7 @@ const GlobalStyles = createGlobalStyle`
    overflow-x: auto;
 
    @media (max-width: ${breakpoints.tabLand}) {
-    display: block;
+    display: block; 
   }
  }
  *,

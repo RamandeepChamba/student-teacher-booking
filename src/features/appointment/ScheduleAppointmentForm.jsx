@@ -5,7 +5,6 @@ import { useAuth } from "../../contexts/AuthContext";
 import toast from "react-hot-toast";
 import { useQueryClient } from "@tanstack/react-query";
 import { formatDateString } from "../../utils/helper";
-import styled from "styled-components";
 import HeaderForModalWindow from "../../ui/HeaderForModalWindow";
 import { useAddAppointment } from "./useAddAppointment";
 import LabelText from "../../ui/LabelText";

@@ -1,6 +1,7 @@
 **Overview and Purpose**
 
 - show specific student's appointments on calendar.
+- can't select time slot and book appointment in this one.
 
 **Functional Requirements**
 
@@ -10,3 +11,6 @@
 **Data Flow & Interaction**
 
 - Gives fetched student appointments to our main calendar component (AppointmentsCalendar)
+
+- shows appointment details via AppointmentDetailed component as modal window
+  when appointment is clicked from calendar.

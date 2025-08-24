@@ -1,10 +1,11 @@
 import LoginForm from "../features/loginAndRegister/LoginForm";
+import LoginRegisterFormContainer from "../ui/LoginRegisterFormContainer";
 
 function Login() {
   return (
-    <div>
+    <LoginRegisterFormContainer>
       <LoginForm />
-    </div>
+    </LoginRegisterFormContainer>
   );
 }
 

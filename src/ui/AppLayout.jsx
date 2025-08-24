@@ -34,6 +34,7 @@ const StyledLayout = styled.div`
     flex-direction: column;
     min-height: auto;
     min-width: 100%;
+    margin-top: 10rem;
   `)}
 `;
 function AppLayout() {

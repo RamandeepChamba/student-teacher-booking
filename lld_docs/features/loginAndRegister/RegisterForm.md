@@ -5,4 +5,9 @@
 
 **Data Flow & Interaction**
 
-- interacts with supabase by add student mutation.
+- adds student to supabase using addStudent mutation.
+
+**State**
+
+- name, email, password:
+  - used by controlled elements

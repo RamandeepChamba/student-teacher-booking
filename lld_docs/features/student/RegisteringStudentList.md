@@ -4,4 +4,8 @@
 
 **Data Flow & Interaction**
 
-- fetches registering students from supabase.
+- fetches and caches registering students from supabase using useGetRegisteringStudents.
+  - queryKey: "registering-students"
+- displays Table with headers and rows for each registering student.
+- has a Modal which will view ApproveRejectRegistrationWindow windows
+  when an action in RegisteringStudentListItem is selected.

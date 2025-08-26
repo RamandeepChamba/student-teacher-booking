@@ -1,3 +1,9 @@
+# GUIDE
+
+## Check /readme.pptx for documentation, how app works, how to use it etc.
+
+## Check /lld_docs/ for component specific documentation, our /src/ and /lld_docs/ have same file structure
+
 # TODOS
 
 - Teacher should Schedule an appointment ✅
@@ -52,66 +58,6 @@
   - department and subject
   - status?
 
-# GUIDE
-
-**Check /lld_docs/ for better documentation, our /src/ and /lld_docs/ have same file structure**
-
-## Login and Register
-
-- Teachers can't register themselves, only admin can add teacher using add teacher form.
-- Students can register themselves but won't be able to login until admin approves them.
-
-## Roles
-
-- only certain roles can access certain routes (e.g only admin can access '/teachers' route etc.)
-- sidebar also shows different links based on different roles
-
-## Calendar
-
-### student
-
-- Can search a teacher using form on Book an appointment page.
-- Can view appointments of searched teacher on a calendar after clicking the "Book" button.
-- Can select a time for an appointment using drag and drop on calendar (opened as a modal after clicking "Book" button)
-  which will open a book an appointment form.
-- Student appointments calendar is not selectable, you can only view appointments.
-
-## Form
-
-### (Add a teacher, Search a teacher)
-
-- using same fields (i.e. Department and subject) in add a teacher and search a teacher form.
-  Fetching department list on form render and fetching subjects according to the department selected.
-- Made a custom hook (useGetDepartmentsAndSubjects) and
-  component (DepartmentsAndSubjectsForForm) to achieve the above and follow DRY principle.
-
-### Add a teacher, Update a teacher
-
-- using same form component to add and update teacher, if "teacher" prop is provided then it's updating else adding.
-
-### Admin
-
-- Made form to add a teacher ✅
-
-### Student
-
-- Made a form to search a teacher for appointment booking ✅
-
-# Technologies used
-
-- Bundler: vite@4
-- React
-- Routing: react-router-dom@6
-- UI state: Context API
-- Remote state: @tanstack/react-query@4
-- Styling: styled components
-
-# Architecture Document
-
-## TODOS
-
-- Add supabase db design diagram when app is finished
-
-# Future improvements
+**Future improvements**
 
 - shouldn't be able to book appointments in the past.
